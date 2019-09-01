@@ -1,1 +1,49 @@
-<p>registro works!</p>
+<mat-card>
+  <form class="row center-xs">
+    <div class="col-xs-12">
+      <h5>Señor agente recuerde, todos los campos son obligatorios</h5>
+    </div>
+    <mat-form-field class="col-xs-12 col-sm-3">
+      <mat-select placeholder="Tipo de documento" formControlName="tipoDocumento">
+        <mat-option value="CC">Cédula de Ciudadanía</mat-option>
+        <mat-option value="CE">Cédula de Extranjería</mat-option>
+        <mat-option value="PA">Pasaporte</mat-option>
+        <mat-option value="RC">Registro Civil</mat-option>
+        <mat-option value="TI">Tarjeta de Identidad</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="col-xs-12 col-sm-9">
+      <input matInput placeholder="Número de documento">
+    </mat-form-field>
+    <mat-form-field class="col-xs-12 col-sm-6">
+      <input matInput placeholder="Nombres">
+    </mat-form-field>
+    <mat-form-field class="col-xs-12 col-sm-6">
+      <input matInput placeholder="Apellidos">
+    </mat-form-field>
+    <mat-form-field class="col-xs-12 col-sm-6">
+      <input matInput placeholder="Fecha de nacimiento">
+    </mat-form-field>
+    <mat-form-field class="col-xs-12 col-sm-6">
+      <input matInput placeholder="Oficio">
+    </mat-form-field>
+    <mat-form-field class="col-xs-12 col-sm-6">
+      <input matInput placeholder="Ingresos mensuales aproximados">
+    </mat-form-field>
+    <mat-form-field class="col-xs-12 col-sm-6">
+      <input matInput placeholder="Teléfono">
+    </mat-form-field>
+    <mat-form-field class="col-xs-12 col-sm-6">
+      <input matInput placeholder="Correo">
+    </mat-form-field>
+    <mat-form-field class="col-xs-12 col-sm-6">
+      <mat-select placeholder="Sexo" formControlName="sexo">
+        <mat-option value="M">Masculino</mat-option>
+        <mat-option value="F">Femenino</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-flat-button type="submit" color="primary" [disabled]="false" (click)="true" class="col-xs-12">
+      Guardar
+    </button>
+  </form>
+</mat-card>
