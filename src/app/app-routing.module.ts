@@ -5,6 +5,7 @@ import {ConsultaComponent} from "./consulta/consulta.component";
 
 
 const routes: Routes = [
+  { path: '', component: ConsultaComponent },
   { path: 'consulta', component: ConsultaComponent },
   { path: 'registro',      component: RegistroComponent }
 ];

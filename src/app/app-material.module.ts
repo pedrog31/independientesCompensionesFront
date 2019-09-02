@@ -1,17 +1,40 @@
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {NgModule} from "@angular/core";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MatButtonModule} from "@angular/material";
+import {
+  MatButtonModule,
+  MatCardModule, MatDatepickerModule, MatExpansionModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatSelectModule, MatSnackBarModule
+} from "@angular/material";
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
     MatButtonModule,
-    MatToolbarModule
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatSnackBarModule,
+    MatDatepickerModule,
+    MatExpansionModule
   ],
   exports: [
     MatButtonModule,
-    MatToolbarModule
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatSnackBarModule,
+    MatDatepickerModule,
+    MatExpansionModule
   ]
 })
 
