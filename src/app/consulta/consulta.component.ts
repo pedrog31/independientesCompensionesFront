@@ -51,9 +51,28 @@ export class ConsultaComponent implements OnInit {
       });
   }
 
-  private mostrarMensaje(mensaje: string) {
+  private mostrarMensaje(mensaje: string): void {
     this.snackBar.open(mensaje, null, {
       duration: 2000,
     });
+  }
+
+  obtenerSexoIndependiente(sexo: string): string {
+    if (sexo == 'M')
+      return 'Masculino';
+    return 'Femenino';
+  }
+
+  obtenerTipoDocumentoIndependiente(tipoDocumento: string): string {
+    if (tipoDocumento == 'CE')
+      return 'Cédula de Extranjería';
+    if (tipoDocumento == 'PA')
+      return 'Pasaporte';
+    if (tipoDocumento == 'RC')
+      return 'Registro Civil';
+    if (tipoDocumento == 'TI')
+      return 'Tarjeta de Identidad';
+    if (tipoDocumento == 'CC')
+      return 'Cédula de Ciudadanía';
   }
 }
