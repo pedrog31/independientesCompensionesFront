@@ -29,10 +29,11 @@ export class RegistroComponent implements OnInit {
       apellidos: [undefined, Validators.required],
       fechaNacimiento: [undefined, [Validators.required, CustomValidators.date]],
       oficio: [undefined, Validators.required],
-      ingresosMensuales: [undefined, [Validators.required, CustomValidators.number]],
+      ingresosMensualesAprox: [undefined, [Validators.required, CustomValidators.number]],
       telefono: [undefined, [Validators.required, CustomValidators.digits]],
       correo: [undefined, [Validators.required, CustomValidators.email]],
       sexo: [undefined, Validators.required],
+      estado: ['Inscrito', Validators.required],
     });
   }
 

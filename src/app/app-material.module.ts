@@ -3,19 +3,17 @@ import {NgModule} from "@angular/core";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
   MatButtonModule,
-  MatCardModule, MatDatepickerModule,
+  MatCardModule, MatDatepickerModule, MatExpansionModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
   MatSelectModule, MatSnackBarModule
 } from "@angular/material";
-import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
     MatButtonModule,
-    MatGridListModule,
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
@@ -23,11 +21,11 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatIconModule,
     MatToolbarModule,
     MatSnackBarModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatExpansionModule
   ],
   exports: [
     MatButtonModule,
-    MatGridListModule,
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
@@ -35,7 +33,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatIconModule,
     MatToolbarModule,
     MatSnackBarModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatExpansionModule
   ]
 })
 
