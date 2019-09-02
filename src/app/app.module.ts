@@ -10,6 +10,7 @@ import { ConsultaComponent } from './consulta/consulta.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {IndependienteServicio} from "./servicios/IndependienteServicio";
 import {HttpClientModule} from "@angular/common/http";
+import {MatNativeDateModule} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {HttpClientModule} from "@angular/common/http";
     ReactiveFormsModule,
     AppRoutingModule,
     AppMaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    MatNativeDateModule
   ],
   providers: [
     IndependienteServicio

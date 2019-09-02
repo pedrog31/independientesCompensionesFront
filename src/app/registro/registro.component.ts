@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {IndependienteModelo} from "../modelo/Independiente.modelo";
+import { CustomValidators } from 'ngx-custom-validators';
 import {IndependienteServicio} from "../servicios/IndependienteServicio";
 import {MatSnackBar} from "@angular/material";
 
@@ -24,14 +24,14 @@ export class RegistroComponent implements OnInit {
   private crearFormularioRegistroIndependiente() {
     this.formularioRegistro = this.fb.group({
       tipoDocumento: [undefined, Validators.required],
-      numeroDocumento: [ undefined,  [Validators.required, Validators.min(1000001)]],
+      numeroDocumento: [ undefined,  [Validators.required, Validators.min(1000001), CustomValidators.digits]],
       nombres: [undefined, Validators.required],
       apellidos: [undefined, Validators.required],
-      fechaNacimiento: [undefined, Validators.required],
+      fechaNacimiento: [undefined, [Validators.required, CustomValidators.date]],
       oficio: [undefined, Validators.required],
-      ingresosMensuales: [undefined, Validators.required],
-      telefono: [undefined, Validators.required],
-      correo: [undefined, Validators.required],
+      ingresosMensuales: [undefined, [Validators.required, CustomValidators.number]],
+      telefono: [undefined, [Validators.required, CustomValidators.digits]],
+      correo: [undefined, [Validators.required, CustomValidators.email]],
       sexo: [undefined, Validators.required],
     });
   }

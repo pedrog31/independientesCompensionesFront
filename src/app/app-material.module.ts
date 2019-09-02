@@ -3,7 +3,7 @@ import {NgModule} from "@angular/core";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
   MatButtonModule,
-  MatCardModule,
+  MatCardModule, MatDatepickerModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
@@ -22,7 +22,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatSelectModule,
     MatIconModule,
     MatToolbarModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDatepickerModule
   ],
   exports: [
     MatButtonModule,
@@ -33,7 +34,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatSelectModule,
     MatIconModule,
     MatToolbarModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDatepickerModule
   ]
 })
 
