@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RegistroComponent } from './registro/registro.component';
 import { ConsultaComponent } from './consulta/consulta.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {IndependienteServicio} from "./servicios/IndependienteServicio";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -17,10 +20,15 @@ import { ConsultaComponent } from './consulta/consulta.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
-    AppMaterialModule
+    AppMaterialModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    IndependienteServicio
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

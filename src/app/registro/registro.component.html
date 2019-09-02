@@ -1,10 +1,10 @@
 <mat-card>
-  <form class="row center-xs">
+  <form class="row center-xs" [formGroup]="formularioRegistro" (submit)="registrarIndependiente()">
     <div class="col-xs-12">
-      <h5>Señor agente recuerde, todos los campos son obligatorios</h5>
+      <h5>Recuerde, todos los campos son obligatorios</h5>
     </div>
     <mat-form-field class="col-xs-12 col-sm-3">
-      <mat-select placeholder="Tipo de documento" formControlName="tipoDocumento">
+      <mat-select placeholder="Tipo de documento*" formControlName="tipoDocumento">
         <mat-option value="CC">Cédula de Ciudadanía</mat-option>
         <mat-option value="CE">Cédula de Extranjería</mat-option>
         <mat-option value="PA">Pasaporte</mat-option>
@@ -13,36 +13,36 @@
       </mat-select>
     </mat-form-field>
     <mat-form-field class="col-xs-12 col-sm-9">
-      <input matInput placeholder="Número de documento">
+      <input matInput placeholder="Número de documento*" formControlName="numeroDocumento">
     </mat-form-field>
     <mat-form-field class="col-xs-12 col-sm-6">
-      <input matInput placeholder="Nombres">
+      <input matInput placeholder="Nombres*" formControlName="nombres">
     </mat-form-field>
     <mat-form-field class="col-xs-12 col-sm-6">
-      <input matInput placeholder="Apellidos">
+      <input matInput placeholder="Apellidos*" formControlName="apellidos">
     </mat-form-field>
     <mat-form-field class="col-xs-12 col-sm-6">
-      <input matInput placeholder="Fecha de nacimiento">
+      <input matInput placeholder="Fecha de nacimiento*" formControlName="fechaNacimiento">
     </mat-form-field>
     <mat-form-field class="col-xs-12 col-sm-6">
-      <input matInput placeholder="Oficio">
+      <input matInput placeholder="Oficio*" formControlName="oficio">
     </mat-form-field>
     <mat-form-field class="col-xs-12 col-sm-6">
-      <input matInput placeholder="Ingresos mensuales aproximados">
+      <input matInput placeholder="Ingresos mensuales aproximados*" formControlName="ingresosMensuales">
     </mat-form-field>
     <mat-form-field class="col-xs-12 col-sm-6">
-      <input matInput placeholder="Teléfono">
+      <input matInput placeholder="Teléfono*" formControlName="telefono">
     </mat-form-field>
     <mat-form-field class="col-xs-12 col-sm-6">
-      <input matInput placeholder="Correo">
+      <input matInput placeholder="Correo*" formControlName="correo">
     </mat-form-field>
     <mat-form-field class="col-xs-12 col-sm-6">
-      <mat-select placeholder="Sexo" formControlName="sexo">
+      <mat-select placeholder="Sexo*" formControlName="sexo">
         <mat-option value="M">Masculino</mat-option>
         <mat-option value="F">Femenino</mat-option>
       </mat-select>
     </mat-form-field>
-    <button mat-flat-button type="submit" color="primary" [disabled]="false" (click)="true" class="col-xs-12">
+    <button mat-flat-button type="submit" color="primary" [disabled]="!formularioRegistro.valid" class="col-xs-10">
       Guardar
     </button>
   </form>
