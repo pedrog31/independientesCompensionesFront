@@ -1,0 +1,73 @@
+<mat-card class="row center-xs">
+  <div class="col-xs-12">
+    <h5>En esta lista se observan las personas independientes inscritas</h5>
+  </div>
+  <div class="col-xs-12">
+    <button mat-flat-button (click)="independienteServicio.consultarListaIndependientes()" color="primary">
+      Actualizar
+    </button>
+  </div>
+  <mat-accordion class="col-xs-12">
+    <mat-expansion-panel
+      *ngFor="let independiente of independienteServicio.obtenerListaIndependientesActuales()"
+      (opened)="independienteSeleccionado = independiente">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{independiente.tipoDocumento}} {{independiente.numeroDocumento}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{independiente.nombres}} {{independiente.apellidos}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="row center-xs">
+        <span class="col-xs-12 col-sm-6 col-lg-4 mat-span-item">
+          <span class="mat-span-label">Tipo de documento</span>
+          <span class="mat-span-value">{{obtenerTipoDocumentoIndependiente(independiente.tipoDocumento) }}</span>
+        </span>
+        <span class="col-xs-12 col-sm-6 col-lg-4 mat-span-item">
+          <span class="mat-span-label">Fecha de nacimiento</span>
+          <span class="mat-span-value">{{independiente.fechaNacimiento | date: "dd-MM-yyyy"}}</span>
+        </span>
+        <span class="col-xs-12 col-sm-6 col-lg-4 mat-span-item">
+          <span class="mat-span-label">Oficio</span>
+          <span class="mat-span-value">{{independiente.oficio}}</span>
+        </span>
+        <span class="col-xs-12 col-sm-6 col-lg-4 mat-span-item">
+          <span class="mat-span-label">Ingresos mensuales aproximados</span>
+          <span class="mat-span-value">{{independiente.ingresosMensualesAprox}}</span>
+        </span>
+        <span class="col-xs-12 col-sm-6 col-lg-4 mat-span-item">
+          <span class="mat-span-label">Teléfono</span>
+          <span class="mat-span-value">{{independiente.telefono}}</span>
+        </span>
+        <span class="col-xs-12 col-sm-6 col-lg-4 mat-span-item">
+          <span class="mat-span-label">Correo</span>
+          <span class="mat-span-value">{{independiente.correo}}</span>
+        </span>
+        <span class="col-xs-12 col-sm-6 col-lg-4 mat-span-item">
+          <span class="mat-span-label">Sexo</span>
+          <span class="mat-span-value">{{obtenerSexoIndependiente(independiente.sexo) }}</span>
+        </span>
+        <span class="col-xs-12 col-sm-6 col-lg-4 mat-span-item">
+          <span class="mat-span-label">Estado</span>
+          <span class="mat-span-value">{{independiente.estado}}</span>
+        </span>
+      </div>
+      <br>
+      <div class="row center-xs">
+        <button mat-raised-button color="primary" class="col-xs-5"
+                (click)="aprobarIndependiente()">
+          Aprobar
+        </button>
+        <button mat-raised-button color="accent" class="col-xs-5"
+                (click)="rechazarIndependiente()">
+          Rechazar
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>
+
+<button mat-fab class="custom-button" routerLink="/registro" aria-label="Registrar independiente">
+  <mat-icon>add</mat-icon>
+</button>
